@@ -24,16 +24,4 @@ export const verificaToken = async (req: any, res: Response, next: NextFunction)
     });
   }
 
-  //   Token.comprobarToken(userToken)
-  //     .then((decoded: any) => {
-  //       // console.log({ decoded });
-  //       req.usuario = decoded.usuario;
-  //   next();
-  //     })
-  //     .catch((err) => {
-  //   return res.status(401).json({
-  //     ok: false,
-  //     mensaje: "token no valido",
-  //   });
-  //     });
 };

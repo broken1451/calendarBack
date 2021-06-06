@@ -23,7 +23,7 @@ export default class Server {
   }
 
   startRoutes() {
-    this.app.use("/", calendarRoutes);
+    this.app.use("/api/events", calendarRoutes);
     this.app.use("/api/auth", authroutes);
 
     // manejar demas rutas q no consiga node, cualquier ruta q no este definida se ataja en este get
