@@ -105,13 +105,16 @@ const login = async (req: any, res: Response) => {
 
 const renewToken = async (req: any, res: Response) => {
   const { usuario } = req;
+  const { uid,name} = usuario.usuario;
+  console.log(uid,name)
   try {
+   
     const token = await Token.generateJwtToken(usuario);
     return res.status(200).json({
       ok: true,
       msg: "renew token",
-      uid: usuario.usuario.uid,
-      name: usuario.usuario.name,
+      uid: uid,
+      name: name,
       usuario,
       token,
     });

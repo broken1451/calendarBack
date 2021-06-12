@@ -166,27 +166,29 @@ var login = function (req, res) { return __awaiter(void 0, void 0, void 0, funct
 }); };
 exports.login = login;
 var renewToken = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var usuario, token, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+    var usuario, _a, uid, name, token, error_3;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
             case 0:
                 usuario = req.usuario;
-                _a.label = 1;
+                _a = usuario.usuario, uid = _a.uid, name = _a.name;
+                console.log(uid, name);
+                _b.label = 1;
             case 1:
-                _a.trys.push([1, 3, , 4]);
+                _b.trys.push([1, 3, , 4]);
                 return [4 /*yield*/, Token_1.default.generateJwtToken(usuario)];
             case 2:
-                token = _a.sent();
+                token = _b.sent();
                 return [2 /*return*/, res.status(200).json({
                         ok: true,
                         msg: "renew token",
-                        uid: usuario.usuario.uid,
-                        name: usuario.usuario.name,
+                        uid: uid,
+                        name: name,
                         usuario: usuario,
                         token: token,
                     })];
             case 3:
-                error_3 = _a.sent();
+                error_3 = _b.sent();
                 return [2 /*return*/, res.status(500).json({
                         ok: false,
                         msg: "Error interno",
